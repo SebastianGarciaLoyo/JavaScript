@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let numalea = Math.floor(Math.random(1)* 100)
+        console.log(numalea)
+        for(i = 0; i <= 10 ; i++){
+            let usuario = Number(prompt("Digite un numero del 1 al 100: "))
+            let numeromenor = usuario < numalea ? true : false;
+            let numeromayor = usuario > numalea ? true : false 
+
+            if (usuario == numalea){
+                alert("Felicidades adivinaste el numero!")
+                break
+            } else {
+                alert("Intentemos otra vez...")
+            } if (numeromenor){
+                alert("Pista: El numero es mayor")
+            } else if (numeromayor){
+                alert("Pista: El numero es menor")
+            }
+        }
+
+        
+    </script>
+</body>
+</html>
