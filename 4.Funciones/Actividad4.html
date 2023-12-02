@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const paga = 500;
+        const record = 15.50;
+        let numatletas = Number(prompt("Cuantas atletas son?: "))
+        let nomatleta, salatleta;
+
+        function recoratleta(numatletas, nomatleta, salatleta){
+            let saltoextra = 0;
+            let nombreextra = "";
+            for(i = 0 ; i < numatletas ; i++){
+                let nomatleta = prompt("Ingrese el nombre de la atleta: ")
+            let salatleta = Number(prompt("Cuantos metros hizo?: "))
+                if (salatleta > saltoextra){
+                    nombreextra = nomatleta
+                    saltoextra = salatleta
+                }
+            }
+            console.log(recoratleta)
+        }
+
+        recoratleta(numatletas)
+
+    </script>
+</body>
+</html>
