@@ -16,14 +16,21 @@
     </table>
 
     <script>
+        function validar(producto,precio,cantidad){
+        return`Producto: ${producto} <br>  Precio:${precio} <br> cantidad:${cantidad} <br> La cantidad total a pagar es de: ${precio * cantidad}`
+
+        if (producto != String){
+        alert("Error, Ingrese un nombre valido.")
+        } else if (precio = String){
+        alert("Error, Ingrese un numero valido.")
+        } else{
+        alert("Ingrese un valor valido.")
+        }
+        }
+        
         let producto = prompt("Ingrese el nombre del producto: ")
         let precio = Number(prompt("Ingrese el precio del producto: "))
         let cantidad = Number(prompt("Ingrese la cantidad que lleva: "))
-
-        function validar(producto,precio,cantidad){
-             return`Producto: ${producto} <br>  Precio:${precio} <br> cantidad:${cantidad} <br> La cantidad total a pagar es de: ${precio * cantidad}`
-        }
-
 
         const  factura = document.getElementById("factura");
         factura.innerHTML +=  validar (producto,precio,cantidad)

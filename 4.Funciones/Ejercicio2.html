@@ -7,7 +7,51 @@
 </head>
 <body>
     <script>
-        
+        function calcularResultados(suma, cantidad, mayor, menor) {
+    if (cantidad > 0) {
+        const promedio = suma / cantidad;
+        console.log(`La sumatoria de los valores es: ${suma}`);
+        console.log(`El valor del promedio es: ${promedio.toFixed(2)}`);
+        console.log(`Cantidad de valores digitados: ${cantidad}`);
+        console.log(`El mayor valor ingresado es: ${mayor}`);
+        console.log(`El menor valor ingresado es: ${menor}`);
+    } else {
+        console.log("No se ingresaron valores.");
+    }
+}
+
+function capturarDatos() {
+    let dato;
+    let suma = 0;
+    let cantidad = 0;
+    let mayor = Number.MIN_SAFE_INTEGER;
+    let menor = Number.MAX_SAFE_INTEGER;
+
+    do {
+        dato = parseInt(prompt("Ingrese un número (ingrese 0 para detener):"));
+        if (!isNaN(dato)) {
+            if (dato !== 0) {
+                suma += dato;
+                cantidad++;
+
+                if (dato > mayor) {
+                    mayor = dato;
+                }
+
+                if (dato < menor) {
+                    menor = dato;
+                }
+            }
+        } else {
+            console.log("Por favor, ingrese un número válido.");
+        }
+    } while (dato !== 0);
+
+    calcularResultados(suma, cantidad, mayor, menor);
+}
+
+capturarDatos();
+
     </script>
 </body>
 </html>
