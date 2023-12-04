@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio1</title>
+</head>
+<body>
+    <h1>Factura</h1>
+    <table>
+        <tr>
+            --------------------------------------------------------------------
+            <p id="factura"></p>
+            --------------------------------------------------------------------
+        </tr>
+    </table>
+
+    <script>
+        let producto = prompt("Ingrese el nombre del producto: ")
+        let precio = Number(prompt("Ingrese el precio del producto: "))
+        let cantidad = Number(prompt("Ingrese la cantidad que lleva: "))
+
+        function validar(producto,precio,cantidad){
+             return`Producto: ${producto} <br>  Precio:${precio} <br> cantidad:${cantidad} <br> La cantidad total a pagar es de: ${precio * cantidad}`
+        }
+
+
+        const  factura = document.getElementById("factura");
+        factura.innerHTML +=  validar (producto,precio,cantidad)
+    </script>
+</body>
+</html>
