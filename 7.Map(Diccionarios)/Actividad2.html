@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <th>N.Factura</th>
+            <th>Deuda</th>
+        </tr>
+
+        <tbody id="cuerpo"></tbody>
+    </table>
+    <script>
+    const cuerpo = document.getElementById("cuerpo")
+    
+    //Validar por si el usuario pone algo mal
+    function ValidarCodigo(codigo){
+        while(true){
+            if (codigo <= 0 || isNaN(codigo)){
+                alert("Error el codigo que ingresaste es invalido, intentelo de nuevo")
+            } else{
+                break
+            }
+        }
+        return codigo
+    }
+
+    function ValidarID(msj){
+        return msj
+    }
+
+
+    //Preguntar si quiere agregar o pagar la factura
+    function diccionario(clave, valor){
+        return true;
+    }
+    
+    function Agregar(){
+        let codigo = Number(prompt("Ingrese el codigo de factura"))
+        let precio = Number(prompt("Ingrese el valor de su factura"))
+        cuerpo.innerHTML += `
+            <tr>
+                <td>${codigo}</td>
+                <td>${precio}</td>    
+            </tr> `
+    }
+
+    function Cancelar(){
+         let pagar = Number(prompt("Para pagar su factura por favor ingrese el codigo"))
+    }
+    
+    
+
+
+    </script>
+
+    <button onclick="Agregar()">Agregar</button>
+    <button onclick="Cancelar()">Cancelar</button>
+</body>
+</html>
