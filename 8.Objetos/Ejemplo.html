@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const persona = {
+            nombre: 'Dani',
+            edad: '30',
+            esTrabajador: true,
+            familia: ['Miguel', 'Maria'],
+            direccion: {
+                calle: "calle de los estudiantes",
+                numero: 13,
+                ciudad: 'Bucaramanga'
+            },
+        
+        caminar: function(){
+            console.log(this.nombre + ' Esta caminando')
+        }
+        };
+
+        console.log(persona)
+        console.log(persona.nombre)
+        persona.caminar()
+
+        //persona = "Daniela"
+        console.log(persona.nombre)
+
+        const cadpersona = JSON.stringify(persona);
+        console.log(cadpersona)
+
+        const objpersona = JSON.parse(cadpersona);
+        console.log(objpersona)
+    </script>
+</body>
+</html>
