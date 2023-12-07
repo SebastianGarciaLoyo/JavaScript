@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gestión de Facturas</title>
+  <style>
+    /* Estilos simples para mejorar la apariencia */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    input[type="text"], input[type="number"], button {
+      margin: 5px;
+    }
+    #facturas {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Gestión de Facturas</h1>
+  
+  <div>
+    <label>Número de Factura:</label>
+    <input type="text" id="numeroFactura">
+    <label>Coste de Factura:</label>
+    <input type="number" id="costeFactura">
+    <button onclick="agregarFactura()">Agregar Factura</button>
+  </div>
+  
+  <div id="resumen">
+    <h3>Resumen</h3>
+    <p>Facturas Ingresadas: <span id="cantidadFacturas">0</span></p>
+    <p>Cantidad Cobrada: <span id="cantidadCobrada">0</span></p>
+    <p>Cantidad Pendiente de Cobro: <span id="cantidadPendiente">0</span></p>
+  </div>
+  
+  <div id="facturas">
+    <h3>Listado de Facturas</h3>
+    <ul id="listaFacturas">
+    </ul>
+  </div>
+  
+  <script>
+    let facturas = {};
+
+    function actualizarResumen() {
+      const cantidadFacturas = Object.keys(facturas).length;
+      const cantidadCobrada = Object.values(facturas).reduce((total, costo) => total + costo, 0);
+      const cantidadPendiente = Object.values(facturas).reduce((total, costo) => total + costo, 0);
+      
+      document.getElementById("cantidadFacturas").innerText = cantidadFacturas;
+      document.getElementById("cantidadCobrada").innerText = cantidadCobrada;
+      document.getElementById("cantidadPendiente").innerText = cantidadPendiente;
+    }
+
+    function agregarFactura() {
+      const numeroFactura = document.getElementById("numeroFactura").value;
+      const costeFactura = parseFloat(document.getElementById("costeFactura").value);
+
+      if (numeroFactura && !isNaN(costeFactura)) {
+        facturas[numeroFactura] = costeFactura;
+        actualizarResumen();
+        mostrarFacturas();
+      } else {
+        alert("Ingrese un número de factura y un costo válido.");
+      }
+    }
+
+    function pagarFactura(numeroFactura) {
+      if (facturas.hasOwnProperty(numeroFactura)) {
+        delete facturas[numeroFactura];
+        actualizarResumen();
+        mostrarFacturas();
+      }
+    }
+
+    function mostrarFacturas() {
+      const listaFacturas = document.getElementById("listaFacturas");
+      listaFacturas.innerHTML = "";
+
+      for (const [numeroFactura, costeFactura] of Object.entries(facturas)) {
+        const listItem = document.createElement("li");
+        listItem.innerText = `Factura ${numeroFactura} - Monto: ${costeFactura}`;
+        
+        const pagarButton = document.createElement("button");
+        pagarButton.innerText = "Pagar";
+        pagarButton.onclick = function() {
+          pagarFactura(numeroFactura);
+        };
+
+        listItem.appendChild(pagarButton);
+        listaFacturas.appendChild(listItem);
+      }
+    }
+  </script>
+</body>
+</html>
