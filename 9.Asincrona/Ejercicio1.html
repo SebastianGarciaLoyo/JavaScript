@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio1</title>
+</head>
+<body>
+    <script>
+        const f1 = (num, ini, callback) => (num > 0) ? callback(num, f1(num-1,ini,callback)): ini;
+
+        const f2 = (a,b) => a * b
+
+        const r = f1(5,1,f2)
+        console.log(r);
+        
+    </script>
+</body>
+</html>
