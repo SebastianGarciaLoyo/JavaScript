@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function operacion(num,callback){
+          const numbers = []
+            for (let i = 0; i < num; i++){  
+            const number = 1 + Math.floor(Math.random() * 6)
+            numbers.push(number)
+            
+            if (number == 5){
+            callback({
+                error: true,
+                iter: i,
+                message:"Tu numero es 6 verdad?"
+            })
+            return;
+        }
+        }
+
+        return callback(null,{
+            error: false,
+            value: numbers
+        })
+        }
+
+        operacion(10,function(err,result){
+            if(err){
+                console.error(">>Error:", err.message)
+                console.log(err)
+                return;
+            }
+            console.log("Tiradas correctas: ",result.value)
+        })
+    </script>
+</body>
+</html>
