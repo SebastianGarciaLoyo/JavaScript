@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let pactada = prompt("Digite la fecha pactada por favor: october 30 2023 ")
+        let entrega = prompt("Digite la fecha de entrega: october 30 2023 ")
+
+        const pactadas = new Date(pactada)
+        const entregadas = new Date(entrega)
+
+
+        let mili = -1*(pactadas-entregadas)
+
+        let dias = mili / 86400000
+
+        
+        if (entrega <= 3){
+            console.log(`Lo siento pero te excediste por ${dias} dias `)
+            console.log("Debes pagar una multa de $7000 pesos")
+        }
+
+        else if (entrega > 3 ){
+            console.log(`wow hermano te excediste por ${dias} dias`)
+            console.log("ahora deberas pagar una multa de $10.000 pesos y seras sancionado por 6 meses")
+        }
+
+
+        else {
+            console.log("todo bien mani vuelve para la proxima si necesitas otro libro :D")
+        }
+
+
+    </script>
+</body>
+</html>

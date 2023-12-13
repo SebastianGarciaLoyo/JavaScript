@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const mipromesa = new Promise((resolve,reject) =>{
+            setTimeout(() =>{
+                const exito = false
+                if (exito){
+                    resolve("La promesa se cumplio con exito!")
+                } else{
+                    reject("Hubo un error al cumplir la promesa <()")
+                }
+            }, 2000)
+        })
+
+        mipromesa
+            .then(resultado =>{
+                console.log("Exito:", resultado)
+            })
+            .catch(error =>{
+                console.error("Error:", error)
+            })
+    </script>
+</body>
+</html>

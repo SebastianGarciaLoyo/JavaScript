@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function validarcorreo(correo){
+            if (isNaN(correo))
+            throw new Error("No puedes dejar eso simplente vacio sabes?")
+        }
+
+        try{
+            let input = prompt("Ingrese su correo por favor: ")
+            let correo = validarcorreo
+            console.log("gracias por registrarte!")
+        } catch(error){
+            console.error(`Se produjo un error: ${error.message}`)
+        }
+    </script>
+</body>
+</html>
