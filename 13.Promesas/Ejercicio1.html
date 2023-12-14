@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         function fecha (){
+            let date = new Date()
+            let tiempo = [`${[date.getHours]}/${[date.getMinutes]}/${[date.getSeconds]}`]
+         }
+
+        let promesa1 = new Promise((resolve,reject) =>{
+            setTimeout(() =>{
+                resolve(`A enviado 1: enviado a las: ${tiempo()}`)
+            }, 2000)
+            
+        })
+
+        let promesa2 = new Promise((resolve,reject) =>{
+            setTimeout(() =>{
+                resolve(`B enviado 2: enviado a las:  `)
+            }, 1000)
+            
+        })
+
+        let promesa3 = new Promise((resolve,reject) =>{
+            setTimeout(() =>{
+                resolve(`C enviado 3: enviado a las:  `)
+            }, 5000)
+            
+        })
+        
+        let promesa4 = new Promise((resolve,reject) =>{
+            setTimeout(() =>{
+                resolve(`D enviado 4: enviado a las: `)
+            }, 2000)
+            
+        })
+
+        let promesa5 = new Promise((resolve,reject) =>{
+            setTimeout(() =>{
+                resolve(`E enviado 5: enviado a las:  `)
+            }, 2000)
+            
+        })
+
+        let promesa6 = new Promise((resolve,reject) =>{
+            setTimeout(() =>{
+                resolve(`F enviado 6: enviado a las:  `)
+            }, 7000)
+            
+        })
+
+        let promesa7 = new Promise((resolve,reject) =>{
+            setTimeout(() =>{
+                resolve(`G enviado 7: enviado a las:  `)
+            }, 2000)
+            
+        })
+
+        let promesa8 = new Promise((resolve,reject) =>{
+            setTimeout(() =>{
+                resolve(`H enviado 8: enviado a las:  `)
+            }, 3000)
+            
+        })
+
+        Promise.all([promesa1,promesa2,promesa3,promesa4,promesa5,promesa6,promesa7,promesa8])
+            .then((values) => {
+                console.log(`Enviando:`, values)
+            })
+            .catch((error) => {
+                console.log(`Ocurrio un error`, error)
+            })
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+          async function getnombre(id_pokemon){
+            
+            for(let i = 0; i< id_pokemon; i++){
+                const  url = `https://pokeapi.co/api/v2/pokemon/${id_pokemon}`;
+
+            const respuesta = await fetch(url)
+
+            //si la respuesta no fue exitosa
+            if(!respuesta.ok)
+                throw new Error("Error. Pokemon no existe")
+
+            const json = await respuesta.json()
+
+            //retornar el nombre de usuario
+            return json.sprites.front_default
+            }
+            
+            console.table(getnombre())
+        }
+
+        getnombre(50)
+            .then(nombre => console.log(nombre))
+            .catch(error => console.error(error.message))
+    </script>
+</body>
+</html>
