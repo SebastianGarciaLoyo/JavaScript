@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" id="formu"><label for="numero1">Numero1</label>
+    <input type="number" name="numero1" id="numero1">    
+    <label for="numero2">Numero2</label>
+    <input type="number" name="numero2" id="numero2">
+    <hr>
+    <div class="respuesta"></div>
+    </form>
+    
+    <button onclick="sumar()" id="pedro">+</button>
+
+    <script>
+        function sumar(){
+            const formu = document.querySelector("#formu")
+            const respuesta = document.querySelector(".respuesta")
+
+            
+            const formData = new FormData(formu)
+            let [numero1,numero2] = [FormData.getAll(numero1)[0], FormData.getAll(numero2)[0]]
+
+            console.log(`La suma es: ${numero1 + numero2}`)
+        }
+        
+    </script>
+</body>
+</html>

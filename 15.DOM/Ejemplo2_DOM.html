@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Primer parrafo</p>
+    <p>Segundo parrafo</p>
+    <p>Tercer parrafo</p>
+    <script>
+        //Utilizando getElementsByTagName para seleccionar elementos por su etiqueta
+        const parrafos = document.getElementsByTagName("p")
+
+        //Iterando sobre los elementos seleccionados
+        for (let i = 0; i < parrafos.length; i++){
+            //Haciendo algo con cada elemento, por ejemplo, cambiando su contenido
+            parrafos[i].innerHTML = "Nuevo contenido para el parrafo" + (i+1)
+        }
+    </script>
+</body>
+</html>

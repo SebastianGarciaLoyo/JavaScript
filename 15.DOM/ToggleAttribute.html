@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="mielemento">Contenido del Elemento</div>
+
+    <script>
+        //Seleccionar el elemento
+        const mielemento = document.getElementById("mielemento")
+
+        //Agregar o eliminar el atributo "data-info basado en su existencia actual"
+        mielemento.toggleAttribute("data-info")
+
+        //Mostrar en la consola si el atributo "data-info" esta presente despues de la operacion
+        console.log("¿data-info presente?", mielemento.hasAttribute("data-info"))
+    </script>
+</body>
+</html>

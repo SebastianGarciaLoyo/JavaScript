@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <button id="miboton" disabled>Boton Deshabilitado</button>
+
+    <script>
+        //Seleccionar el boton
+        const miboton = document.getElementById("miboton")
+
+        //verificar si el boton esta deshabilitado
+        console.log("¿Boton deshabilitado?", miboton.disabled)//Deberia imprimir True
+
+        //Habilitar el boton (eliminar el atributo "disabled")
+        miboton.removeAttribute("disabled")
+
+        //Verificar nuevamente el estado del boton
+        console.log("¿Boton deshabilitado?", miboton.disabled)//Deberia imprimir False
+    </script>
+</body>
+</html>
