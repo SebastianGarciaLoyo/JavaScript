@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" id="formulario"><label for="centi">Grados Centigrados:</label>
+    <input type="number" name="centi" id="centi">
+    <br>
+
+    <div id="calculo">
+    <label for="faren">Grados Farenheit:</label>
+    <input type="number" name="faren" id="faren"> 
+    </div>
+
+    <div id="celsius">
+        <label for="celsius">Grados Celsius:</label>
+        <input type="number" name="celsius" id="celsius">
+    </div>
+    </form>
+    
+    <button onclick="inicio()">Calcular</button>
+    <script>
+        
+
+
+        function inicio(){
+        const formulario = document.getElementById("formulario")
+        const faren = document.querySelector("faren")
+        
+        const formData = new FormData(formulario)
+        
+        const respuesta = calculo(formData.getAll("centi"))
+
+            console.log(respuesta)
+        }
+
+        function calculo(centi){
+            return centi * (9/5) + 32
+            
+        }
+
+        function celsius(faren){
+            const resul = faren *(5/9) - 32
+            return resul
+        }
+
+        console.log(celsius(86))
+        
+    </script>
+</body>
+</html>

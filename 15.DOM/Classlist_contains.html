@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="mielemento" class="clase1 clase2"></div>
+    <button onclick="contarclase()">Cantidad de clases</button>
+    <button onclick="agregarclase()">Agregar clase</button>
+    <button onclick="ClassNPos()">Clase en la 1r posicion</button>
+    <button onclick="existeclase()">Validar si una clase existe</button>
+    <script>
+        const agregarclase = () =>{
+            const elemento = document.getElementById("mielemento")
+            elemento.classList.add("nuevaclase")
+        }
+
+        const contarclase = () =>{
+            const elemento = document.getElementById("mielemento")
+
+            const cant = elemento.classList.length;
+            alert("Cantidad de clases: " + cant.toString())
+        }
+
+        const classNPos = () =>{
+            const elemento = document.getElementById("mielemento")
+
+            const claseenposicion1 = elemento.classList.item(1)
+            alert("clase en la posicion 1: " + claseenposicion1)
+        }
+
+        const existeclase = () =>{
+            const elemento = document.getElementById("mielemento")
+
+            const existeclase = elemento.classList.contains("nuevaclase")
+            alert("Existe la clase: "+ existeclase)
+        }
+    </script>
+</body>
+</html>

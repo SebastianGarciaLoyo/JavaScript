@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Convertir de Euros a Dolares</h1>
+
+    <form action="" id="formulario">
+        <label for="" id="euros">Euros:</label>
+        <input type="number" name="euros" id="euros">
+        <br>
+        <label for="" id="dolares">Dolares:</label>
+        <input type="number" name="dolares" id="dolares">
+
+    </form>
+
+    <button onclick="iniciar()"></button>
+    <script>
+        async function iniciar(convertir){
+            const url = `https://cdn.dinero.today/api/latest.json${convertir}`
+
+            const respuesta = await fetch(url)
+
+            if(!respuesta.ok)
+                throw new Error("Error")
+
+            const json = await respuesta.json()
+
+            return json.latest
+        }
+
+        convertir("USD")
+        
+    </script>
+</body>
+</html>

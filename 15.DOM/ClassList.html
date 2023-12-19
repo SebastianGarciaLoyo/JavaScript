@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="mielemento" class="clase1 clase2">Contenido del elemento</div>
+    <button onclick="agregarclase()">AgregarClase</button>
+    <script>
+        const agregarclase = () =>{
+            const elemento = document.getElementById("mielemento");
+            elemento.classList.add("nuevaclase")
+        }
+    </script>
+</body>
+</html>

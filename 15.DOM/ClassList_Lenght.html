@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="mielemento" class="clase1 clase2"></div>
+    <button onclick="contarclases()">Cantidad de clases</button>
+    <button onclick="agregarclase()">AgregarClase</button>
+    <script>
+        const agregarclase = () =>{
+            const elemento = document.getElementById("mielemento")
+            elemento.classList.add("nuevaclase")
+        }
+
+        const contarclases = () =>{
+            const elemento = document.getElementById("mielemento")
+
+            const cant = elemento.classList.length;
+            alert("Cantidad de clases: " + cant.toString())
+        }
+    </script>
+</body>
+</html>

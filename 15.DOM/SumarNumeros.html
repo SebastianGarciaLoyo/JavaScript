@@ -18,14 +18,18 @@
 
     <script>
         function sumar(){
-            const formu = document.querySelector("#formu")
-            const respuesta = document.querySelector(".respuesta")
+            const formu = document.getElementById("formu")
+            const respuesta = document.querySelector("respuesta")
 
             
             const formData = new FormData(formu)
-            let [numero1,numero2] = [FormData.getAll(numero1)[0], FormData.getAll(numero2)[0]]
+            const respu = sumar(formData.getAll("numero1"))
 
-            console.log(`La suma es: ${numero1 + numero2}`)
+                console.log(respu)
+        }
+
+        function suma(numero1,numero2){
+            return numero1 + numero2
         }
         
     </script>

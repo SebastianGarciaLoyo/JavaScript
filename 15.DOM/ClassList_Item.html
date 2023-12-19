@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="mielemento" class="clase1 clase2"></div>
+    <button onclick="contarclases()">Contar clases</button>
+    <button onclick="agregarclase()">Agregar clase</button>
+    <button onclick="claseenposicion1()">Clase en la posicion</button>
+    <script>
+        const contarclases = () =>{
+            const elemento = document.getElementById("mielemento")
+
+            const cant = elemento.classList.length
+            alert("Cantidad de clases: " + cant.toString())
+        }
+
+        const classNPos = () =>{
+            const elemento = document.getElementById("mielemento")
+
+            const claseenposicion1 = elemento.classList.item(1)
+            alert("Clase en la posicion 1" + claseenposicion1)
+        }
+    </script>
+</body>
+</html>
