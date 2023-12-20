@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="nombre">Nombre: </label>
+    <input type="text" name="nombre" id="nombre">
+    <button onclick="agregarnombre()">Agregar y ordenar nombre</button>
+    <br><br>
+    <textarea name="nombres" id="nombres" cols="55" rows="10" disabled></textarea> 
+    <button onclick="limpiar()">Limpiar</button>
+    <script>
+        function agregarnombre(){
+            const element = document.querySelector("#nombres")
+            const Nombre = document.getElementById("nombre").value
+
+            element.textContent += Nombre
+        }
+
+        function limpiar(){
+            const element = document.querySelector("#nombres")
+            const borrar = document.querySelector("#nombre")
+            
+        element.remove(borrar)
+        }
+    </script>
+</body>
+</html>
