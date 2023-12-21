@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>API de navegar por nodos</h1>
+    <br><br>
+    <div class="container" style="border: 2px solid red;">
+    <div class="parent" style="border: 2px solid green; margin: 5px;">
+    <p>Hola a todos</p>
+    <p class="message">Hola, soy todo un Camper</p>
+    </div>
+    </div>
+
+    <button onclick="nav_children()">Children</button>
+    <script>
+        function nav_children(){
+            const div = document.querySelector(".parent")
+
+            //Cantidad de hijos
+            console.log(div.childNodes.length)
+
+            //nodos
+            console.log(div.childNodes)
+
+            //nodo padre
+            console.log("nodo padre")
+            console.log(div.parentNode)
+        }
+    </script>
+</body>
+</html>

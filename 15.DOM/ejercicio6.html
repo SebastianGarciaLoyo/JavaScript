@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    div{
+        border: 2pxs solid slateblue;
+    }
+</style>
+</head>
+<body>
+    <h1>Registro del paquete</h1>
+    
+    <form action="">
+     <label for="nombre">Nombre del cliente: </label>
+    <br>
+    <input type="text" name="nombre" id="nombre">
+    <br><br>
+   <label for="material">Material de la caja: </label>
+   <br>
+   <input type="text" name="material" id="material">
+    <br><br>
+   <label for="dimensiones">Seleccione unas dimensiones para la caja: </label>
+   <br>
+   <input type="radio" name="dimensiones" id="dimensiones" value="diminutas">Diminutas
+   <input type="radio" name="dimensiones" id="dimensiones" value="medianas">Medianas
+   <input type="radio" name="dimensiones" id="dimensiones" value="grandres">Grandres
+   <br><br>
+   <label for="comentarios">Comentarios: </label>
+   <br>
+   <textarea name="comentarios" id="comentarios" cols="30" rows="10"></textarea>     
+    </form>
+    
+    <br>
+    <button onclick="enviar()">Enviar</button>
+
+
+    <div></div>
+    
+    <script>
+        function enviar(){
+            const div = document.querySelector("form")
+            const p = document.createElement("p")
+
+            const calcular = () =>{
+                const value = document.querySelector('[name=dimensiones]').value
+                console.log(value)
+            }
+
+            p.innerHTML = `<span>${nombre} ha pedido una caja de ${material} con unas dimesiones ${dimensiones}. ${comentarios}</span>`.value
+        }
+    </script>
+</body>
+</html>

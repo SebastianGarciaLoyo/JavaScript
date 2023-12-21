@@ -1,0 +1,24 @@
+<ul id="lista-dinamica">
+    <li>item 0</li>
+</ul>
+
+<button onclick="addList()">Agregar Items A La Lista</button>
+
+<script>
+    function addList(){
+        const lista = document.getElementById("lista-dinamica")
+        
+        
+        const arrayitems = ["Item1", "Item2", "Item3"];
+
+        const frag = document.createDocumentFragment()
+        
+        arrayitems.forEach(item =>{
+            const li = document.createElement("li")
+            li.textContent = item
+            frag.appendChild(li)
+        })
+        lista.appendChild(frag)
+    }
+    
+</script>
