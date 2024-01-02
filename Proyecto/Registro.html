@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guías Para Minecraft</title>
+    <link rel="stylesheet" href="./roca.css">
+</head>
+<body>
+    <header id="titulo">
+        <img class="logo" src="./imagenes/logo.png" alt="logo">
+        <h1>Guías De Minecraft</h1>
+        <a class="sesion" href="./Inicio-Sesion.html">Iniciar Sesion</a>
+    </header>
+
+    <nav>
+        <ul id="navegacion">
+            <li class="item"><a href="./Guias-Minecraft.html">Inicio</a></li>
+            <li class="item"><a href="./Guias.html">Guías</a></li>
+            <li class="item"><a href="./Ideas-Casa.html">Ideas de casas</a></li>
+            <li class="item"><a href="./Ideas-Granjas.html">Ideas de granja</a></li>
+            <li class="item"><a href="./Coffe.html">Coffee</a></li>
+        </ul>
+    </nav>
+    <br><br><br>
+    <main class="contenedor">
+        <h2 class="sub">Registro</h2>
+        <section class="caja">
+            <article class="contenido">
+                <img class="imagen" src="imagenes/registro.jpg" alt="steve">
+                <p class="texto">Bienvenido Aqui puedes registrarte de manera que puedas iniciar sesion en mi pagina</p>
+                <img class="imagen" src="imagenes/registro.jpg" alt="steve">
+            </article>
+        </section>
+        <br><br><br>
+        <form id="registroForm" class="formu" action="">
+            <br>
+            <p>Usuario: <input type="text" class="regNombre" name="regNombre" size="30"></p>
+            <br>
+            <p class="txt">Contraseña: <input class="contra" type="password" id="regContra" name="regContra"></p>
+            
+            <p class="conte">
+                <input class="enviar" type="submit" value="Registrarse">
+                <input class="reset" type="reset" value="Limpiar">
+            </p>
+            <br>
+        </form>
+    </main>
+
+    <script>
+        document.getElementById('registroForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+          
+            const nuevoUsuario = document.getElementById('regNombre').value;
+            const nuevaContraseña = document.getElementById('regContra').value;
+
+            const usuariosRegistrados = JSON.parse(localStorage.getItem('usuarios')) || [];
+
+            const usuarioExistente = usuariosRegistrados.find(usuario => usuario.nombre === nuevoUsuario);
+
+            if (usuarioExistente) {
+                alert("El nombre de usuario ya está registrado. Por favor, elige otro.");
+            } else {
+                usuariosRegistrados.push({ nombre: nuevoUsuario, contraseña: nuevaContraseña });
+                localStorage.setItem('usuarios', JSON.stringify(usuariosRegistrados));
+                alert("Registro exitoso. Ahora puedes iniciar sesión.");
+                window.location.href = 'Inicio-Sesion.html'; // Reemplaza 'Inicio-Sesion.html' con la URL de tu página de inicio de sesión
+            }
+        });
+    </script>t>
+</body>
+</html>
