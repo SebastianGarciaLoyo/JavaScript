@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Calentamiento 2</h1>
+
+    <script>
+        const countpairs = (projectcost, tarjet) =>{
+            let count = 0;
+            for (let i = 0; i< projectcost.length - 1; i++)
+                for (let j = i+ 1; j < projectcost.length; j++)
+                    count += (Math.abs(projectcost[i] - projectcost[j])
+                === tarjet) ? 1 : 0;
+
+        return count;
+        }
+
+        let t = 2
+        let pc = [1,3,5,7,8]
+        console.log(countpairs(pc, t));
+
+        
+    </script>
+</body>
+</html>

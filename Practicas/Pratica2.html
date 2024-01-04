@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Calentamiento</h1>
+
+    <script>
+        diagonal = m => Math.abs(m.reduce((p,c,i) => p += m[i][i] - m[i][i] - m[i][m.length - i - 1], 0))
+
+        const tabla = [[1,2,3,],
+                       [4,5,6,],
+                       [7,8,9]]
+        console.log(diagonal(tabla))
+    </script>
+</body>
+</html>

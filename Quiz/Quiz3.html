@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion De Tarjetas</title>
+    <style>
+        h1{
+            background-color: blanchedalmond;
+            
+            
+        
+        }
+        body{
+            background-color: cornflowerblue;
+            font-family: sans-serif;
+        }
+
+        #respon{
+            background-color: bisque;
+    
+        }
+
+        #card{
+            background-color: cadetblue;
+            
+        
+        }
+
+        #agrega{
+            margin: 10px;
+            border-radius: 1px;
+            height: 30px;
+
+        }
+
+        #elimina{
+            border-radius: 1px;
+            height: 30px;
+        }
+
+        #respon{
+            width: fit-content;
+            height: fit-content;
+        }
+
+        #cierra{
+            height: 30px;
+        }
+
+        #guarda{
+            height: 30px;
+        }
+
+        #pregunta{
+            height: 25px;
+        }
+
+        #respuesta{
+            height: 25px;
+        }
+    </style>
+</head>
+<body>
+    <h1>                                                Gestion De Tarjetas  
+        <button id="agrega" onclick="agregar()">Agregar</button> <button id="elimina" onclick="eliminar()">Eliminar</button>
+    </h1>
+
+    
+    
+    <div id="flash"></div>
+
+    <div id="cajas"></div>
+    
+    <script>
+        function agregar(){
+            const div = document.querySelector("#flash")
+            const p = document.createElement("table")
+            p.innerHTML = `
+                        <br>
+                        <div id="respon">
+                        <h2>Crear Flashcard</h2>
+                        <p>Pregunta</p>
+                        <input type="text" name="pregunta" id="pregunta">
+                        <p>Respuesta</p>
+                        <input  type="text" name="respuesta" id="respuesta">
+                        <br><br>
+                        <button id="guarda"  onclick="guardar()">Guardar</button>
+                        <button id="cierra" onclick="cerrar()">Cerrar</button>
+                        </div>
+                        `
+            div.append(p)
+        }
+
+        function eliminar(){
+            const div = document.querySelector("#cajas")
+            const p = document.querySelector("#card")
+            p.innerHTML = ""
+            div.insertBefore(p, null)
+        }
+
+        function guardar(){
+            const div = document.querySelector("#cajas")
+            const p = document.createElement("table")
+            const pregunta = document.querySelector("#pregunta").value
+            const respuesta = document.querySelector("#respuesta").value
+            p.innerHTML = `
+                        <br>
+                        <div id="card">
+                        <button style='text-align: right;'  onclick="eliminar()">Borrar</button>
+                        <hr>  
+                        <h2>${pregunta}</h2>
+                        
+                        <br>
+                        <p style = 'color: crimson;' onclick='alert(\"${respuesta}"\)'>Respuesta</p>
+                        </div>
+                        `
+            div.appendChild(p)
+        }
+
+        function cerrar(){
+            const div  = document.querySelector("#flash")
+            const text = document.querySelector("#respon")
+            text.innerHTML = ""
+            div.insertBefore(text, null)
+        }
+
+    </script>
+</body>
+</html>

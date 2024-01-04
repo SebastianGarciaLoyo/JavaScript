@@ -35,7 +35,7 @@
         <br><br><br>
         <form id="registroForm" class="formu" action="">
             <br>
-            <p>Usuario: <input type="text" class="regNombre" name="regNombre" size="30"></p>
+            <p>Usuario: <input type="text" id="regNombre" name="regNombre" size="30"></p>
             <br>
             <p class="txt">Contraseña: <input class="contra" type="password" id="regContra" name="regContra"></p>
             
@@ -64,7 +64,7 @@
                 usuariosRegistrados.push({ nombre: nuevoUsuario, contraseña: nuevaContraseña });
                 localStorage.setItem('usuarios', JSON.stringify(usuariosRegistrados));
                 alert("Registro exitoso. Ahora puedes iniciar sesión.");
-                window.location.href = 'Inicio-Sesion.html'; // Reemplaza 'Inicio-Sesion.html' con la URL de tu página de inicio de sesión
+                window.location.href = 'Inicio-Sesion.html';
             }
         });
     </script>t>
