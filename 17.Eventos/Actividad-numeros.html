@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label>No se aceptan dígitos</label>
+        <input type="text" id="letras">
+    </form>
+
+    <script>
+        const inputfield = document.getElementById("letras")
+
+        inputfield.addEventListener("keydown", function(event){
+            const teclapresionada = event.key
+            const esnumero = !isNaN(parseInt(teclapresionada))
+
+            if (esnumero){
+                event.preventDefault()
+            }
+        })
+    </script>
+</body>
+</html>

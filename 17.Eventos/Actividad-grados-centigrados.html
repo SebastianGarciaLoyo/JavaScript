@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <h1>Conversor De Temperatura</h1>
+    
+    <label for="celsius">Grados Celsius:</label>
+    <input type="number" name="input" id="celsius" placeholder="Ingrese grados Celsius">
+    <br>
+    <label for="fahrenheit">Grados Fahrenheit</label>
+    <input type="number" name="input" id="fahrenheit" placeholder="Ingrese grados Fahrenheit">
+    <br>
+    <button id="calcular">Calcular</button>
+    
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+            const celsiusinput = document.getElementById("celsius")
+            const fahrenheitinput = document.getElementById("fahrenheit")
+            const calcularbtn = document.getElementById("calcular")
+        
+        function convertiracelsius(fahrenheit){
+            return (fahrenheit - 32) * (5/9);
+        }
+
+        function convertirafahrenheit(celsius){
+            return(celsius * (9/5)) + 32;
+        }
+
+        function cambiarfondo(input){
+            input.style.backgroundColor = '#71ff74'
+        }
+
+        function actualizarvalores(){
+            const valorcelsius = parseFloat(celsiusinput.value);
+            const valorfahrenheit = parseFloat(fahrenheitinput.value);
+
+            if (!isNaN(valorcelsius)){
+                const fahrenheit = convertirafahrenheit(valorcelsius);
+                fahrenheitinput.value = fahrenheit;
+                cambiarfondo(fahrenheitinput);
+                fahrenheitinput.style.backgroundColor = '#feff64'
+            }
+
+            if (!isNaN(valorfahrenheit)){
+                const celsius = convertiracelsius(valorcelsius);
+                celsiusinput.value = celsius;
+                cambiarfondo(celsiusinput);
+                celsiusinput.style.backgroundColor = '#feff64'
+            }
+        }
+
+        celsiusinput.addEventListener("input", () =>{
+            cambiarfondo(celsiusinput);
+            actualizarvalores();
+        })
+
+        fahrenheitinput.addEventListener("input", () =>{
+            cambiarfondo(fahrenheitinput);
+            actualizarvalores();
+        })
+
+        calcularbtn.addEventListener("click", () =>{
+            actualizarvalores();
+        })
+        
+        })
+    </script>
+</body>
+</html>

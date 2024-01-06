@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    body{
+        transition: background-color 0.5s;
+        
+    }
+</style>
+</head>
+
+<body>
+    <h1>Ejemplo con eventos y addEventListener</h1>
+
+    <button id="changecolorbutton" onclick="changeBackgroundColor()">Cambiar Color del fondo</button>
+
+    <script>
+        const letters = "0123456789ABCDEF"
+
+        const changeBackgroundColor = () =>
+            document.body.style.backgroundColor = getRandomColor();
+
+        const button = document.getElementById("changecolorbutton")
+            .addEventListener("click", changeBackgroundColor)
+        
+        const getRandomColor = () => Array(6).fill("").reduce(
+          p => p += letters[Math.floor(Math.random() * 16)], "#");
+        
+        button.setAttribute("onclick","changecolorbutton")
+        
+    </script>
+</body>
+</html>

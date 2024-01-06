@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+body{
+    text-align: center;
+}
+    
+#boton1{
+    background-color: aqua;
+    
+
+}
+
+#boton2{
+    background-color: red;
+    color: white;
+}
+</style>
+</head>
+<body>
+    <h2>Contador</h2>
+    <button id="boton1" onclick="aumentar">Aumentar</button>
+    <button id="boton2" onclick="disminuir">Disminuir</button>
+
+    <p id="conteo">numeros: </p>
+    
+    
+    <script>
+        const aumentar = document.getElementById("boton1")
+        const disminuir = document.getElementById("boton2")
+        const contra = document.getElementById("conteo")
+
+        let contar = 0
+
+        aumentar.addEventListener("onclick", () =>{
+            contar++
+        })
+
+        disminuir.addEventListener("onclick", () =>{
+            contar--
+        })
+        
+        console.log(contra)
+
+
+        
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ejemplo de eventos</h1>
+
+    <p id="texto">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto, nisi enim consequuntur sed asperiores error blanditiis nostrum laborum praesentium deleniti in necessitatibus odit, velit, magnam quae maxime molestiae? Repudiandae, laudantium?</p>
+    <p id="numero" style="display: none;"></p>
+
+    <script>
+        const texto = document.getElementById("texto")
+
+        let contar = 0
+    
+        texto.addEventListener("mouseover", () =>{
+                contar++
+                texto.style.display = "none";
+                numero.style.display = "block";
+                numero.textContent = contar;
+
+        }),
+
+        texto.addEventListener("mouseout", () =>{
+            texto.style.display = "block"
+            numero.style.display = "none"
+        }
+
+
+        
+        
+        )
+        
+        
+    </script>
+</body>
+</html>
