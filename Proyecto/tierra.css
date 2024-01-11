@@ -35,7 +35,7 @@ body{
 
 .sesion{
     position: relative;
-    left: 27vh;
+    left: 10vh;
 }
 
 .item{
@@ -225,9 +225,14 @@ a{
     }
 
     .sesion{
-        position: relative;
-        left: 3px;
+        left: 0vh;
         
+        
+    }
+
+    .contenido{
+        width: auto;
+        height: auto;
     }
 
     .imagen{
@@ -283,6 +288,10 @@ a{
         width: 15vw;
     }
 
+    .sesion{
+        left: 2.4vh;
+    }
+
     .texto{
     font-size: medium;
     letter-spacing: 1px;
@@ -317,4 +326,6 @@ a{
     .texto{
         font-size: medium;
     }
+
+    
 }

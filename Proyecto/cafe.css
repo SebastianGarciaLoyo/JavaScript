@@ -35,7 +35,7 @@ body{
 
 .sesion{
     position: relative;
-    left: 60vh;
+    left: 10vh;
 }
 
 .item{
@@ -223,6 +223,10 @@ a{
         display: none;
     }
 
+    .sesion{
+        left: 0vh;
+    }
+
     .item{
         display: flex;
         justify-content: flex-start;
@@ -271,6 +275,10 @@ a{
         width: 15vw;
     }
 
+    .sesion{
+        left: 2.4vh;
+    }
+
     .texto{
     font-size: medium;
     letter-spacing: 1px;
@@ -303,4 +311,6 @@ a{
     .texto{
         font-size: medium;
     }
+
+    
 }

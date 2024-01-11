@@ -41,7 +41,7 @@ body{
 
 .sesion{
     position: relative;
-    left: 60vh;
+    left: 10vh;
 }
 
 #navegacion{
@@ -155,6 +155,10 @@ a{
         width: auto;
     }
 
+    .sesion{
+        left: 0vh;
+    }
+
     .imagen{
         display: none;
     }
@@ -201,9 +205,15 @@ a{
         height: 6vh;
     }
 
+    
+
     .texto{
     font-size: medium;
     letter-spacing: 1px;
+    }
+
+    .sesion{
+        left: 2.4vh;
     }
 
     .imagen2{
@@ -239,4 +249,6 @@ a{
     .video{
         height: auto;
     }
+
+    
 }

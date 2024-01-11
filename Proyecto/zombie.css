@@ -149,6 +149,10 @@ a{
         padding: 0.3rem;
     }
     
+    .sesion{
+        left: 0vh;
+    }
+
     .texto{
         font-size: medium;
         width: auto;
@@ -205,6 +209,10 @@ a{
     letter-spacing: 1px;
     }
 
+    .sesion{
+        left: 2.4vh;
+    }
+
     .imagen2{
         display: none;
     }
@@ -239,4 +247,6 @@ a{
     .video{
         height: auto;
     }
+
+    
 }

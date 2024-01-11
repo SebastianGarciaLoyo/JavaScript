@@ -41,7 +41,7 @@ body{
 
 .sesion{
     position: relative;
-    left: 60vh;
+    left: 10vh;
 }
 
 #navegacion{
@@ -156,6 +156,10 @@ a{
         width:calc(100vw /5);
         padding: 0.3rem;
     }
+
+    .sesion{
+        left: 0vh;
+    }
     
     .texto{
         font-size: medium;
@@ -213,6 +217,10 @@ a{
     font-size: medium;
     line-height: 16px;
     }
+    
+    .sesion{
+        left: 2.4vh;
+    }
 
     .texto2{
     font-size: medium;
@@ -254,4 +262,6 @@ a{
     .video{
         height: auto;
     }
+
+    
 }
