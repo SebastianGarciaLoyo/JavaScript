@@ -54,19 +54,24 @@
             const nuevoUsuario = document.getElementById('regNombre').value;
             const nuevaContraseña = document.getElementById('regContra').value;
 
-            const usuariosRegistrados = JSON.parse(localStorage.getItem('usuarios')) || [];
-
-            const usuarioExistente = usuariosRegistrados.find(usuario => usuario.nombre === nuevoUsuario);
-
-            if (usuarioExistente) {
-                alert("El nombre de usuario ya está registrado. Por favor, elige otro.");
-            } else {
-                usuariosRegistrados.push({ nombre: nuevoUsuario, contraseña: nuevaContraseña });
-                localStorage.setItem('usuarios', JSON.stringify(usuariosRegistrados));
+            // Hacer una solicitud POST al servidor JSON para agregar el nuevo usuario
+            fetch('http://localhost:3000/usuarios', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ nombre: nuevoUsuario, contraseña: nuevaContraseña }),
+            })
+            .then(response => response.json())
+            .then(data => {
                 alert("Registro exitoso. Ahora puedes iniciar sesión.");
                 window.location.href = 'Inicio-Sesion.html';
-            }
+            })
+            .catch(error => {
+                console.error('Error al registrar usuario:', error);
+                alert("Error en el registro. Por favor, inténtalo de nuevo.");
+            });
         });
-    </script>t>
+    </script>
 </body>
 </html>
