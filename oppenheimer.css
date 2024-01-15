@@ -12,7 +12,7 @@ h1{
 }
 
 h2{
-   color:white;
+   color:black;
 }
 
 a{
@@ -105,6 +105,26 @@ a{
 }
 
 .caja18{
+   border: 2px solid white;
+   border-radius: 10px;
+}
+
+.caja19{
+   border: 2px solid white;
+   border-radius: 10px;
+}
+
+.caja20{
+   border: 2px solid white;
+   border-radius: 10px;
+}
+
+.caja21{
+   border: 2px solid white;
+   border-radius: 10px;
+}
+
+.caja22{
    border: 2px solid white;
    border-radius: 10px;
 }
