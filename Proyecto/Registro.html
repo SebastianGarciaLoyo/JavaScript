@@ -28,7 +28,7 @@
         <section class="caja">
             <article class="contenido">
                 <img class="imagen" src="imagenes/registro.jpg" alt="steve">
-                <p class="texto">Bienvenido Aqui puedes registrarte de manera que puedas iniciar sesion en mi pagina</p>
+                <p class="texto">Bienvenido Aqui puedes registrarte asi podras ingresar a mi Pagina</p>
                 <img class="imagen" src="imagenes/registro.jpg" alt="steve">
             </article>
         </section>
@@ -55,7 +55,7 @@
             const nuevaContraseña = document.getElementById('regContra').value;
 
             // Hacer una solicitud POST al servidor JSON para agregar el nuevo usuario
-            fetch('http://localhost:3000/usuarios', {
+            fetch('Proyecto\Json Server\datos.json', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
