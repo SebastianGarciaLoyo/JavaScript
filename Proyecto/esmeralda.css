@@ -50,6 +50,7 @@ display:flex ;
 list-style: none;
 text-align: center;
 width: fit-content;
+height: fit-content;
 
 }
 .item{
@@ -79,6 +80,12 @@ a{
     font-family: 'minecraft';
 }
 
+.contenido2{
+    background-color: rgba(253, 253, 150, 0.55);
+    backdrop-filter: blur(4px);
+    display: flex;
+    font-family: 'minecraft';
+}
 
 
 .imagen{
@@ -176,8 +183,8 @@ a{
 
 
 .boton{
-    position: relative;
-    right: 220px;
+    padding: 2px;
+    position: fixed;
 }
 
 .contexto{
@@ -226,6 +233,14 @@ a{
         height: 50px;
     }
 
+    .boton{
+    padding: 2px;
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    }
+
     .item{
         display: flex;
         justify-content: flex-start;
@@ -238,8 +253,32 @@ a{
         width: auto;
     }
 
+    .texto2{
+        display: flex;
+        width: fit-content;
+        justify-content: right;
+    }
+
     .sesion{
-        left: 0vh;
+        position: none;
+        left: vh;
+        right: 100vh;
+    }
+
+    .Tarjeta{
+        width: 30vh;
+        height: 30vh;
+    }
+
+    .Peluche{
+        width: 30vh;
+        height: 30vh;
+    }
+
+    .Camisa{
+        width: 30vh;
+        height: 30vh;
+
     }
 
     .imagen{
@@ -268,6 +307,7 @@ a{
     
     .contenido2{
         width: 100%;
+        position: relative;
     }
     
     .logo{
@@ -288,15 +328,23 @@ a{
         height: 6vh;
     }
 
-    
-
     .texto{
+        width: fit-content;
     font-size: medium;
     letter-spacing: 1px;
     }
 
+    .texto2{
+        width: 900px;
+        height: 30vw;
+    }
+
     .sesion{
         left: 2.4vh;
+    }
+
+    .imagen{
+        display: none;
     }
 
     .imagen2{
@@ -322,6 +370,15 @@ a{
     .buscar{
         top: 7rem;
     }
+
+    .contenido{
+
+    }
+
+    .contenido2{
+        width: auto;
+        height: fit-content;
+    }
 }
 
 @media(max-width:1328px){
@@ -329,9 +386,6 @@ a{
         font-size: medium;
     }
 
-    .video{
-        height: auto;
-    }
 
     
 }
