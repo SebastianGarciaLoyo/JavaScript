@@ -7,12 +7,12 @@
     <link rel="stylesheet" href="./esmeralda.css">
 </head>
 <body>
-    <form action="https://www.google.com/search" method="get"></form>
     <header id="titulo">
         <img class="logo" src="./imagenes/logo.png" alt="logo">
         <h1>Guias De Minecraft</h1>
         <a class="sesion" href="./Inicio-Sesion.html">Iniciar Sesion</a>
     </header>
+    
     <nav>
         <ul id="navegacion">
             <li class="item"><a href="./Guias-Minecraft.html">Inicio</a></li>
@@ -23,60 +23,114 @@
         </ul>
     </nav>
     <br><br><br>
-    <p class="buscar">Buscar:<input type="search" name="q"></p>
+
     <main id="contenedor">
         <h2 class="sub">Un Video Mas Mi Gente</h2>
         <section class="caja">
             <article class="contenido">
                 <img class="imagen" src="./imagenes/granja.jpg" alt="hola">
-                <p class="texto">Hola aqui puedes encontrar items relacionados con el juego por si quieres comprar uno y tenerlo como recuerdo.</p>
+                <p class="texto">Hola aquí puedes encontrar items relacionados con el juego por si quieres comprar uno y tenerlo como recuerdo.</p>
                 <img class="imagen" src="./imagenes/granja.jpg" alt="test">
             </article>
         </section>
-    <br><br><br>
-    <main id="contenedor">
+        <br><br><br>
+
         <h2 class="sub">Tarjeta De Regalo</h2>
         <section class="caja">
             <article class="contenido">
-            <img class="imagen" src="./imagenes/golem.jpg" alt="test">
-            <p class="texto2"> <img class="Tarjeta" src="./imagenes/Tarjeta.webp" alt="tarjeta">Nombre: Tarjeta De Minecraft
-                                                                                                <br>
-                                                                                                Precio: 90000
-                                                                                                <br><br><br><br>
-                                                                                                <button class="boton">Comprar</button>
-                                                                                                <br>
-                                                                                                </p>
-            <img class="imagen" src="./imagenes/golem.jpg" alt="test">
+                <img class="imagen" src="./imagenes/golem.jpg" alt="test">
+                <p class="texto2">
+                    <img class="Tarjeta" src="./imagenes/Tarjeta.webp" alt="tarjeta">Nombre: Tarjeta De Minecraft
+                    <br>Precio: 90000
+                    <br><br><br><br>
+                    <button class="boton" onclick="tienda.agregarProducto('Tarjeta De Minecraft', 90000)">Comprar</button>
+                </p>
+                <img class="imagen" src="./imagenes/golem.jpg" alt="test">
             </article>
         </section>
-    <br><br><br>
-    <main id="contenedor">
+        <br><br><br>
+
         <h2 class="sub">Peluche De Creeper</h2>
         <section class="caja">
             <article class="contenido">
                 <img class="imagen" src="./imagenes/comienzo.jpg" alt="test">
-                <p class="texto2"> <img class="Peluche" src="./imagenes/Creeper.jpg" alt="creeper">Nombre: Peluche De Creeper
-                                                                                                   <br>
-                                                                                                   Precio: 50000
-                                                                                                   <br><br><br><br>
-                                                                                                   <button class="boton">Comprar</button></p>
+                <p class="texto2">
+                    <img class="Peluche" src="./imagenes/Creeper.jpg" alt="creeper">Nombre: Peluche De Creeper
+                    <br>Precio: 50000
+                    <br><br><br><br>
+                    <button class="boton" onclick="tienda.agregarProducto('Peluche De Creeper', 50000)">Comprar</button>
+                </p>
                 <img class="imagen" src="./imagenes/comienzo.jpg" alt="test">   
             </article>
         </section>
-    <br><br><br>
-    <main id="contenedor">
+        <br><br><br>
+
         <h2 class="sub">Camiseta Estampada</h2>
         <section class="caja">
             <article class="contenido">
                 <img class="imagen" src="./imagenes/admiracion.jpg" alt="test">
-                <p class="texto2"><img class="Camisa" src="./imagenes/camiseta.jpg" alt="camisa">Nombre: Camiseta Estampada De Minecraft
-                                                                                                 <br>
-                                                                                                 Precio: 45000
-                                                                                                 <br><br><br><br>
-                                                                                                 <button class="boton">Comprar</button></p>
+                <p class="texto2">
+                    <img class="Camisa" src="./imagenes/camiseta.jpg" alt="camisa">Nombre: Camiseta Estampada De Minecraft
+                    <br>Precio: 45000
+                    <br><br><br><br>
+                    <button class="boton" onclick="tienda.agregarProducto('Camiseta Estampada', 45000)">Comprar</button>
+                </p>
                 <img class="imagen" src="./imagenes/admiracion.jpg" alt="test">
             </article>
         </section>
-    <br><br><br>
+        <br><br><br>
+
+        <!-- Factura -->
+        <div id="factura">
+            <h2>Factura</h2>
+            <ul id="listaProductos"></ul>
+            <p id="total"></p>
+        </div>
+    </main>
+
+    <script>
+        const tienda = {
+            productos: [],
+
+            mostrarFactura: function() {
+                const factura = document.getElementById('factura');
+                factura.style.display = 'block';
+
+                const listaProductos = document.getElementById('listaProductos');
+                listaProductos.innerHTML = ''; // Limpiar la lista
+
+                let total = 0;
+
+                this.productos.forEach(producto => {
+                    const item = document.createElement('li');
+                    item.classList.add('producto');
+                    item.innerHTML = `${producto.nombre}: $${producto.precio} <button class="botonEliminar" onclick="tienda.eliminarProducto('${producto.nombre}', ${producto.precio})">Eliminar</button>`;
+                    listaProductos.appendChild(item);
+
+                    total += producto.precio;
+                });
+
+                const totalElement = document.getElementById('total');
+                totalElement.textContent = `Total: $${total}`;
+            },
+
+            agregarProducto: function(nombre, precio) {
+                const nuevoProducto = { nombre, precio };
+                this.productos.push(nuevoProducto);
+
+                this.mostrarFactura();
+            },
+
+            eliminarProducto: function(nombre, precio) {
+                const indice = this.productos.findIndex(producto => producto.nombre === nombre && producto.precio === precio);
+
+                if (indice !== -1) {
+                    this.productos.splice(indice, 1);
+                    this.mostrarFactura();
+                }
+            }
+        };
+    </script>
 </body>
 </html>
+
