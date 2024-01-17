@@ -14,11 +14,6 @@ export function controlador(form, e, usuarios){
             url = URL + usuarios;
             post(url, datos);
             form.reset();
-            break;
-
-        case "Buscar":
-            url = `${URL}${usuarios}/${datos !== null ? datos.id : ""}`
-            get(url,form).then((data) =>{
-                //datos obtenidos
-            })    }
+            break;  
+        }
 }
