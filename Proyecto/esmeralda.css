@@ -255,7 +255,7 @@ a{
 
     .texto2{
         display: flex;
-        width: fit-content;
+        width: 90px;
         justify-content: right;
     }
 
@@ -336,7 +336,6 @@ a{
 
     .texto2{
         width: 900px;
-        height: 30vw;
     }
 
     .sesion{
@@ -371,9 +370,7 @@ a{
         top: 7rem;
     }
 
-    .contenido{
-
-    }
+    
 
     .contenido2{
         width: auto;
