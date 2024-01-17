@@ -8,7 +8,8 @@
 </head>
 <body>
     <header id="titulo">
-        <a href="#"><img class="logo" src="./imagenes/logo.png" alt="logo"></a>
+        <a class="tienda" href="#">Tienda</a>
+        <img class="logo" src="./imagenes/logo.png" alt="logo">
         <h1>Guias De Minecraft</h1>
         <a class="sesion" href="./Inicio-Sesion.html">Iniciar Sesion</a>
     </header>
@@ -55,7 +56,7 @@
             <article class="contenido2">
                 <img class="imagen3" src="./imagenes/creeper.jpg" alt="test">
                 <p class="texto2">
-                    <img class="Peluche" src="./imagenes/Creeper.jpg" alt="creeper">Nombre: Peluche De Creeper
+                    <img class="Peluche" src="./imagenes/Peluche.jpg" alt="creeper">Nombre: Peluche De Creeper
                     <br>Precio: 50000
                     <br><br><br><br>
                     <button class="boton" onclick="tienda.agregarProducto('Peluche De Creeper', 50000)">Comprar</button>
@@ -87,48 +88,7 @@
         </div>
     </main>
 
-    <script>
-        const tienda = {
-            productos: [],
-
-            mostrarFactura: function() {
-                const factura = document.getElementById('factura');
-                factura.style.display = 'block';
-
-                const listaProductos = document.getElementById('listaProductos');
-                listaProductos.innerHTML = ''; // Limpiar la lista
-
-                let total = 0;
-
-                this.productos.forEach(producto => {
-                    const item = document.createElement('li');
-                    item.classList.add('producto');
-                    item.innerHTML = `${producto.nombre}: $${producto.precio} <button class="botonEliminar" onclick="tienda.eliminarProducto('${producto.nombre}', ${producto.precio})">Eliminar</button>`;
-                    listaProductos.appendChild(item);
-
-                    total += producto.precio;
-                });
-
-                const totalElement = document.getElementById('total');
-                totalElement.textContent = `Total: $${total}`;
-            },
-
-            agregarProducto: function(nombre, precio) {
-                const nuevoProducto = { nombre, precio };
-                this.productos.push(nuevoProducto);
-
-                this.mostrarFactura();
-            },
-
-            eliminarProducto: function(nombre, precio) {
-                const indice = this.productos.findIndex(producto => producto.nombre === nombre && producto.precio === precio);
-
-                if (indice !== -1) {
-                    this.productos.splice(indice, 1);
-                    this.mostrarFactura();
-                }
-            }
-        };
+    <script src="./JavaScript/Tienda.js">
     </script>
 </body>
 </html>

@@ -8,7 +8,8 @@
 </head>
 <body>
     <header id="titulo">
-        <a href="./Tienda.html"><img class="logo" src="./imagenes/logo.png" alt="logo"></a>
+        <a class="tienda" href="./Tienda.html">Tienda</a>
+        <img class="logo" src="./imagenes/logo.png" alt="logo">
         <h1>Guias De Minecraft</h1>
         <a class="sesion" href="#">Iniciar Sesion</a>
     </header>
@@ -48,25 +49,6 @@
         </form>
     </main>
 
-    <script>
-        document.getElementById('formu').addEventListener('submit', function(event) {
-            event.preventDefault();
-          
-            const username = document.getElementById('nombre').value;
-            const password = document.getElementById('contra').value;
-
-            const usuariosRegistrados = JSON.parse(localStorage.getItem('usuarios')) || [];
-
-            const usuarioValido = usuariosRegistrados.find(usuario => usuario.nombre === username && usuario.contraseña === password);
-
-            if (usuarioValido) {
-                alert("Inicio de sesión exitoso");
-                // Redireccionar a otra página después del inicio de sesión exitoso
-                window.location.href = 'Guias-Minecraft.html'; 
-            } else {
-                alert("Usuario o contraseña incorrectos");
-            }
-        });
-    </script>
+    <script src="./JavaScript/Sesion.js"></script>
 </body>
 </html>

@@ -59,13 +59,16 @@ display:flex ;
 list-style: none;
 text-align: center;
 width: fit-content;
-
 }
 
 a{
     text-decoration: none;
     color: black;
+}
 
+.tienda{
+    position: relative;
+    right: 30vh;
 }
 
 .contenido{
@@ -219,6 +222,11 @@ a{
         width: auto;
     }
 
+    .tienda{
+        position: relative;
+        left: 33vh;
+    }
+
     .imagen{
         display: none;
     }
@@ -312,5 +320,9 @@ a{
         font-size: medium;
     }
 
+    .tienda{
+        position: relative;
+        right: 10vh;
+    }
     
 }

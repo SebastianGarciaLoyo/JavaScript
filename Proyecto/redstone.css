@@ -65,6 +65,11 @@ a{
 
 }
 
+.tienda{
+    position: relative;
+    right: 30vh;
+}
+
 .sub{
     text-align: center;
     color: white;
@@ -89,28 +94,28 @@ a{
 }
 
 .imagen2{
-    height: 16vw;
-    width: 16vw;
+    height: 15.6vw;
+    width: 17vw;
 }
 
 .imagen3{
-    height: 16vw;
-    width: 16vw;
+    height: 15.6vw;
+    width: 17vw;
 }
 
 .imagen4{
-    height: 16vw;
-    width: 16vw;
+    height: 15.6vw;
+    width: 17vw;
 }
 
 .imagen5{
-    height: 16vw;
-    width: 16vw;
+    height: 15.6vw;
+    width: 17vw;
 }
 
 .imagen6{
-    height: 16vw;
-    width: 16vw;
+    height: 15.6vw;
+    width: 17vw;
 }
 
 .texto{
@@ -148,6 +153,11 @@ a{
         justify-content: flex-start;
         width:calc(100vw /5);
         padding: 0.3rem;
+    }
+
+    .tienda{
+        position: relative;
+        left: 33vh;
     }
     
     .texto{
@@ -250,5 +260,9 @@ a{
         height: auto;
     }
 
+    .tienda{
+        position: relative;
+        right: 10vh;
+    }
     
 }

@@ -68,6 +68,11 @@ a{
 
 }
 
+.tienda{
+    position: relative;
+    right: 30vh;
+}
+
 .contenido{
     background-color: rgba(253, 253, 150, 0.55);
     backdrop-filter: blur(4px);
@@ -225,6 +230,11 @@ a{
         width: auto;
     }
 
+    .tienda{
+        position: relative;
+        left: 33vh;
+    }
+
     .sesion{
         left: 0vh;
     }
@@ -327,4 +337,8 @@ a{
         font-size: medium;
     }
     
+    .tienda{
+        position: relative;
+        right: 10vh;
+    }
 }
