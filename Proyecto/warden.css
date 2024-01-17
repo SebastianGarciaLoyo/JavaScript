@@ -42,6 +42,8 @@ body{
 .sesion{
     position: relative;
     left: 10vh;
+    border: 2px solid;
+    padding: 10px;
 }
 
 #navegacion{
@@ -67,7 +69,9 @@ a{
 
 .tienda{
     position: relative;
-    right: 30vh;
+    right: 12vh;
+    padding: 10px;
+    border: 2px solid;
 }
 
 .sub{
@@ -107,7 +111,7 @@ a{
 }
 
 .imagen3{
-    height: 15.6vw;
+    height: 16vw;
     width: 17vw;
 }
 

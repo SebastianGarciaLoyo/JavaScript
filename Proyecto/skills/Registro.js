@@ -5,3 +5,4 @@ form.addEventListener("click", (e) =>{
     e.preventDefault();
     controlador(form, e, "usuarios")
 })
+

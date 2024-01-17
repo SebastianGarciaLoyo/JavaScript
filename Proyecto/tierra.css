@@ -35,6 +35,8 @@ body{
 
 .sesion{
     position: relative;
+    border: 2px solid;
+    padding: 10px;
     left: 10vh;
 }
 
@@ -70,7 +72,9 @@ a{
 
 .tienda{
     position: relative;
-    right: 30vh;
+    right: 13vh;
+    padding: 10px;
+    border: 2px solid;
 }
 
 .contenido{
@@ -148,10 +152,12 @@ a{
     width: fit-content;
     height: fit-content;
     margin-top: 10px;
+    padding: 10px;
     
 }
 .reset{
     margin-top: 10px;
+    padding: 10px;
 }
 
 .contra{

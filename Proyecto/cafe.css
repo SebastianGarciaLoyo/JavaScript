@@ -36,6 +36,8 @@ body{
 .sesion{
     position: relative;
     left: 10vh;
+    padding: 10px;
+    border: 2px solid;
 }
 
 .item{
@@ -68,7 +70,9 @@ a{
 
 .tienda{
     position: relative;
-    right: 30vh;
+    right: 13vh;
+    padding: 10px;
+    border: 2px solid;
 }
 
 .contenido{

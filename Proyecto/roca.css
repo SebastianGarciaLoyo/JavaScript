@@ -24,7 +24,7 @@ body{
     display: flex;
     background-color: #77dd77;
     text-align: center;
-    width: 100vw;
+    width: 100.3vw;
     height: 53px;
     font-family: 'minecraft';
     padding: 1rem;
@@ -36,6 +36,8 @@ body{
 .sesion{
     position: relative;
     left: 10vh;
+    border: 2px solid;
+    padding: 10px;
 }
 
 .item{
@@ -53,12 +55,15 @@ body{
     justify-content: left;
 }
 
+
+
 #navegacion{
 background-color:#84b6f4;
-display:flex ;
+display: flex ;
 list-style: none;
 text-align: center;
 width: fit-content;
+height: fit-content;
 
 }
 
@@ -71,6 +76,8 @@ a{
 .tienda{
     position: relative;
     right: 30vh;
+    border: 2px solid;
+    padding: 10px;
 }
 
 .contenido{
@@ -148,11 +155,13 @@ a{
     width: fit-content;
     height: fit-content;
     margin-top: 10px;
+    padding: 10px;
     
 }
 
 .reset{
     margin-top: 10px;
+    padding: 10px;
 }
 
 .contra{
@@ -221,6 +230,8 @@ a{
         background-size: 100vh;
         background-position: center;
         background-size: cover;
+        overflow-x: hidden;
+        overflow-y: hidden;
     }
     
     .texto{
@@ -233,10 +244,15 @@ a{
     .tienda{
         position: relative;
         left: 33vh;
+        background-color: none;
+        padding: 0px;
+        border: none;
     }
 
     .sesion{
         left: 0vh;
+        padding: 0px;
+        border: none;
     }
 
     .imagen{

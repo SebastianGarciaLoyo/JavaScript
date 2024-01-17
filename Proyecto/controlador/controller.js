@@ -1,5 +1,6 @@
 import { post } from "../modelos/post.js";
 
+
 export function controlador(form, e, usuarios){
     const URL = "http://localhost:3000/"
     let url = ""
@@ -14,5 +15,10 @@ export function controlador(form, e, usuarios){
             post(url, datos);
             form.reset();
             break;
-    }
+
+        case "Buscar":
+            url = `${URL}${usuarios}/${datos !== null ? datos.id : ""}`
+            get(url,form).then((data) =>{
+                //datos obtenidos
+            })    }
 }
