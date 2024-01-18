@@ -192,8 +192,15 @@ a{
 
 
 .boton{
+    margin-top: 2rem;
     padding: 10px;
     position: fixed;
+}
+
+.boton2{
+    padding: 3px;
+    position: relative;
+    left: 40%;
 }
 
 .contexto{
@@ -245,14 +252,15 @@ a{
     .boton{
     padding: 2px;
     position: absolute;
-    bottom: 2rem;
+    bottom: 3rem;
     left: 50%;
     transform: translateX(-50%);
     }
 
     .tienda{
+        border: none;
         position: relative;
-        left: 33vh;
+        left: 32vh;
     }
 
     .item{
@@ -274,6 +282,7 @@ a{
     }
 
     .sesion{
+        border: none;
         position: none;
         left: vh;
         right: 100vh;
@@ -353,8 +362,14 @@ a{
         right: 8vh;
     }
 
+    .boton{
+        bottom: 10vh;
+        margin-top: 2rem;
+        padding: 10px;
+    }
+
     .texto2{
-        width: 900px;
+        width: 100vh;
     }
 
     .sesion{
@@ -385,16 +400,21 @@ a{
         display: none;
     }
 
-    .buscar{
-        top: 7rem;
+    .Tarjeta{
+        width: 25vh;
+        height: 25vh;
     }
 
-    
-
-    .contenido2{
-        width: auto;
-        height: fit-content;
+    .Peluche{
+        width: 25vh;
+        height: 25vh;
     }
+
+    .Camisa{
+        width: 22vh;
+        height: 22vh;
+    }
+
 }
 
 @media(max-width:1328px){
@@ -407,23 +427,37 @@ a{
         right: 10vh;
     }
 
-    .imagen{
-        width: 12vh;
-        height: 12vh;
-    }
 
+    .imagen{
+        height: 20vw;
+        width: 20vw;
+        
+    }
+    
     .imagen2{
-        width: 12vh;
-        height: 12vh;
+        height: 22vw;
+        width: 22vw;
     }
     
     .imagen3{
-        width: 12vh;
-        height: 12vh;
+        height: 20vw;
+        width: 20vw;
+    }
+    
+    .imagen4{
+        height: 20vw;
+        width: 20vw;
+    }
+    
+    .imagen5{
+        height: 20vw;
+        width: 20vw;
+    }
+    
+    .imagen6{
+        height: 20vw;
+        width: 20vw;
     }
 
-    .imagen4{
-        width: 13vh;
-        height: 13vh;
-    }
+    
 }

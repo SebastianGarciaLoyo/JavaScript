@@ -237,13 +237,14 @@ a{
 
     .sesion{
         left: 0vh;
-        
+        border: none;
         
     }
 
     .tienda{
+        border: none;
         position: relative;
-        left: 33vh;
+        left: 32vh;
     }
 
     .contenido{

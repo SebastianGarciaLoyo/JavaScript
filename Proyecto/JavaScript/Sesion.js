@@ -25,11 +25,10 @@ document.addEventListener('DOMContentLoaded', function() {
     fetch('http://localhost:3000/usuarios')
         .then(response => response.json())
         .then(usuariosRegistrados => {
-            // Puedes realizar acciones adicionales cuando se carga la página
         });
 });
 
-const validar = document.querySelector(".sesion")
+const validar = document.querySelector(".enviar")
 validar.addEventListener("click", (e) => {
     e.preventDefault();
     controlador(validar,e, "usuarios");

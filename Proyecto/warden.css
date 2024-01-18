@@ -167,11 +167,13 @@ a{
     }
 
     .tienda{
+        border: none;
         position: relative;
-        left: 33vh;
+        left: 32vh;
     }
 
     .sesion{
+        border: none;
         left: 0vh;
     }
     
