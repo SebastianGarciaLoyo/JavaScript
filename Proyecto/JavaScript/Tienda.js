@@ -38,4 +38,20 @@ const tienda = {
             this.mostrarFactura();
         }
     }
-}; 
+};
+
+// Agrega evento de clic al botón de compra
+document.querySelector('.boton2').addEventListener('click', function () {
+    if (tienda.productos.length === 0) {
+        // Si no hay productos en la factura, mostrar mensaje
+        alert('¡Añade al menos un producto a la factura antes de comprar!');
+    } else {
+        // Mostrar alerta de compra exitosa
+        alert('¡Compra exitosa!');
+
+        // Limpiar la factura
+        tienda.productos = [];
+        tienda.mostrarFactura();
+    }
+});
+

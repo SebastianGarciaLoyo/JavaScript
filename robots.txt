@@ -1,1 +1,7 @@
-Esto es un archivo de texto en el cual probamos si se puede mirar o no.
+import { controlador } from "../controlador/controller.js";
+
+const form =  document.querySelector(".formu")
+form.addEventListener("click", (e) =>{
+    e.preventDefault();
+    controlador(form, e, "usuarios")
+});
