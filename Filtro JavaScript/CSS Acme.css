@@ -40,3 +40,10 @@ h1{
     padding: 10px;
     background-color: steelblue;
 }
+
+#factura{
+    background-color: darkorange;
+    width: fit-content;
+    height: fit-content;
+}
+
