@@ -1,0 +1,42 @@
+body{
+    background-color: darkcyan;
+}
+
+h1{
+    background-color: blanchedalmond;
+    text-align: center;
+}
+
+.formu{
+    border: 2px solid;
+    width: fit-content;
+    height: fit-content;
+    background-color: black;
+    color: white;
+}
+
+#agrega{
+    padding: 10px;
+    background-color: red;
+    color: white;
+}
+
+#funci{
+    display: flex;
+    justify-content: left;
+    padding: 10px;
+
+}
+
+.funcio{
+    text-decoration: none;
+}
+
+#shop{
+    background-color: cornsilk;
+}
+
+#tienda{
+    padding: 10px;
+    background-color: steelblue;
+}
